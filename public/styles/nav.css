@@ -20,9 +20,11 @@ nav .writeNewTweet {
     text-align: center;
     padding-right: 1.5em;
     margin-top: 50px;
+    display: flex;
+    flex-direction: column;
 }
 
-nav h4 {
+nav p {
     margin: 0;
 }
 

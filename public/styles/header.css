@@ -8,5 +8,15 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    justify-self: center;
     align-items: center;
+}
+
+header img {
+    margin-top: 50px;
+}
+
+header .yourName p {
+    font-size: 30px;
+    margin-top: 0;
 }
