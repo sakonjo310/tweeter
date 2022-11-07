@@ -1,0 +1,31 @@
+nav {
+    height: 120px;
+    width: 100%;
+    background-color: #4056a1;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+  }
+
+nav span {
+    font-family: 'Bungee', cursive;
+    padding-left: 1.5em;
+    margin-top: 50px;
+    font-size: 40px;
+}
+
+nav .writeNewTweet {
+    text-align: center;
+    padding-right: 1.5em;
+    margin-top: 50px;
+}
+
+nav h4 {
+    margin: 0;
+}
+
+nav i {
+    color: red;
+}
