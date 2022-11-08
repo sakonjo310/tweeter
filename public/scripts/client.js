@@ -4,40 +4,11 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-// const data = [
-//     {
-//       "user": {
-//         "name": "Newton",
-//         "avatars": "https://i.imgur.com/73hZDYK.png"
-//         ,
-//         "handle": "@SirIsaac"
-//       },
-//       "content": {
-//         "text": "If I have seen further it is by standing on the shoulders of giants"
-//       },
-//       "created_at": 1461116232227
-//     },
-//     {
-//       "user": {
-//         "name": "Descartes",
-//         "avatars": "https://i.imgur.com/nlhLi3I.png",
-//         "handle": "@rd" },
-//       "content": {
-//         "text": "Je pense , donc je suis"
-//       },
-//       "created_at": 1461113959088
-//     }
-//   ]
-
-
 const renderTweets = function(tweetsArr) {
-    // loops through tweets
-    // calls createTweetElement for each tweet
-    // takes return value and appends it to the tweets container
-    return tweetsArr.forEach(tweet => {
-        $('#tweet-container').append(createTweetElement(tweet));
-      });
-}
+  return tweetsArr.forEach(tweet => {
+      $('#tweet-container').append(createTweetElement(tweet));
+    });
+};
 
 const createTweetElement = function(tweet) {
   const datePassed = timeago.format(tweet.created_at);
@@ -50,7 +21,9 @@ const createTweetElement = function(tweet) {
         </div>
         <p class="username">${tweet.user.handle}</p>
         </header>
-        <p class="tweet">${tweet.content.text}</p>
+        <div class="tweet-main">
+          <p class="tweet">${tweet.content.text}</p>
+        </div>
         <footer>
         <p>${datePassed}</p>
         <div class="action-icons">
@@ -61,25 +34,10 @@ const createTweetElement = function(tweet) {
         </footer>
     </article>`
   return $tweet;
-}
+};
 
-const loadTweets = function() {
-  $.ajax({
-    url: '/tweets',
-    method: 'GET',
-    success: (data) => {
-      renderTweets(data);
-    }
-  })
-
-}
-
-
-$(document).ready(function() {
-  loadTweets();
-
+const submitTweet = function() {
   const $form = $('#tweet-form');
-
   $form.on('submit', function(event) {
     event.preventDefault();
     const data = $form.serialize();
@@ -92,6 +50,24 @@ $(document).ready(function() {
       }
     })
   })
+};
+
+const loadTweets = function() {
+  $.ajax({
+    url: '/tweets',
+    method: 'GET',
+    success: (data) => {
+      renderTweets(data);
+    }
+  })
+};
+
+
+$(document).ready(function() {
+  loadTweets();
+  submitTweet();
+  
+  
 
 
 });

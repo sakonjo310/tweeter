@@ -2,9 +2,12 @@ section.new-tweet form {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin-top: 50px;
 }
+
 label {
-    flex: 100%
+    flex: 100%;
+    font-weight: bold;
 }
 
 section.new-tweet textarea {
