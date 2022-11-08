@@ -1,4 +1,4 @@
-form {
+section.new-tweet form {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -7,7 +7,7 @@ label {
     flex: 100%
 }
 
-textarea {
+section.new-tweet textarea {
     flex: 100%;
     border-style: none;
     border-bottom: 5px solid #545149;
@@ -16,7 +16,7 @@ textarea {
     margin-bottom: 15px;
 }
 
-button {
+section.new-tweet button {
     font-family: 'Bungee', cursive;
     width: 100px;
     border-style: none;
@@ -25,6 +25,6 @@ button {
     padding: 5px 10px;
 }
 
-output {
+section.new-tweet output {
     font-family: 'Bungee', cursive;
 }

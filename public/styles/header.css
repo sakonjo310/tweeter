@@ -1,4 +1,4 @@
-header {
+header.main-header {
     height: 400px;
     width: 100%;
     background-color: #bf7900;
@@ -12,11 +12,11 @@ header {
     align-items: center;
 }
 
-header img {
+header.main-header img {
     margin-top: 50px;
 }
 
-header .yourName p {
+header.main-header .yourName p {
     font-size: 30px;
     margin-top: 0;
 }

@@ -36,7 +36,7 @@
     </nav>
 
     <!-- Header here -->
-    <header>
+    <header class="main-header">
       <div>
             <img src="/images/profile-hex.png"> 
       </div>
@@ -50,13 +50,18 @@
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form method="POST" action="/tweets" class="tweet-form">
+        <form method="POST" action="/tweets">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
           <button type="submit">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">140</output>
         </form>
       </section>
+
+      <article class="feed">
+        <header></header>
+        <footer></footer>
+      </article>
     </main>
   </body>
 </html>
