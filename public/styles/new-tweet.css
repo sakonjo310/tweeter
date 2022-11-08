@@ -1,10 +1,14 @@
-.tweet-form {
+form {
     display: flex;
-    flex-direction: column;
-
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+label {
+    flex: 100%
 }
 
-#tweet-text {
+textarea {
+    flex: 100%;
     border-style: none;
     border-bottom: 5px solid #545149;
     background-color: transparent;
@@ -12,16 +16,15 @@
     margin-bottom: 15px;
 }
 
-.container .new-tweet .below-tweet {
-    display: flex;
-    justify-content: space-between;
+button {
     font-family: 'Bungee', cursive;
-}
-
-.container .new-tweet button {
+    width: 100px;
     border-style: none;
     background-color: #4056a1;
     color: #fff;
     padding: 5px 10px;
 }
 
+output {
+    font-family: 'Bungee', cursive;
+}
