@@ -22,6 +22,8 @@ nav .writeNewTweet {
     margin-top: 50px;
     display: flex;
     flex-direction: column;
+    transform: scale(1);
+    transition: all 0.1s ease-in-out 0.1s;
 }
 
 nav p {
@@ -29,5 +31,12 @@ nav p {
 }
 
 nav i {
-    color: red;
+    color: rgb(125, 190, 28);
+    --fa-beat-fade-opacity: 0.1;
+    --fa-beat-fade-scale: 1.25
+}
+
+nav .writeNewTweet:hover {
+    transform: scale(1.1);
+    text-shadow: 3px 3px 20px rgb(125, 190, 28), -2px 1px 30px rgb(125, 190, 28);
 }

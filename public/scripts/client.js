@@ -50,7 +50,7 @@ const hideMessages = function() {
   $(".error-message-two").hide();
   $(".tweeted").hide();
   return;
-}
+};
 
 const submitTweet = function() {
   const $form = $('#tweet-form');
@@ -71,13 +71,13 @@ const submitTweet = function() {
       method: 'POST',
       data: data,
       success: (data => {
-        hideMessages() 
+        hideMessages();
         $(".tweeted").slideDown(function() {
-          setTimeout(() => {$(".tweeted").slideUp()}, 5000)
-        })
-        loadNewTweet()
-        $('textarea').val('')
-        $('.counter').text(140)
+          setTimeout(() => {$(".tweeted").slideUp()}, 3000)
+        });
+        loadNewTweet();
+        $('textarea').val('');
+        $('.counter').text(140);
       })
     })
   })
@@ -103,9 +103,32 @@ const loadNewTweet = function() {
   })
 };
 
+const showTweetBox = function() {
+  $('.writeNewTweet').on('click', function() {
+    $('.new-tweet').slideToggle();
+  })
+};
+
+const scrollToTop = function() {
+  $('.fixedButton').on('click', function() {
+    $('body,html').animate({
+      scrollTop: 0
+    }, 1000);
+  })
+};
+
+const switchButtons = function() {
+
+}
+
 $(document).ready(function() {
+  // $('.fixedButton').hide();
+  $('.new-tweet').hide();
   hideMessages();
   loadTweets();
   submitTweet();
+  scrollToTop();
+  showTweetBox();
+  switchButtons();
 });
 

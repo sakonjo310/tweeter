@@ -34,6 +34,19 @@ body {
   margin: auto;
  }
 
+.fixedButton{
+  position: fixed;
+  bottom: 0px;
+  right: 0px; 
+  padding: 20px;
+  
+  color: red;
+}
+
+.fixedButton i {
+  font-size: 80px;
+}
+
  article.feed {
   margin-top: 50px;
   margin-bottom: 50px;

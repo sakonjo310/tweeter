@@ -47,6 +47,7 @@ section.new-tweet button {
     background-color: #4056a1;
     color: #fff;
     padding: 5px 10px;
+    
 }
 
 section.new-tweet output {
@@ -58,10 +59,11 @@ section.new-tweet textarea:focus {
 }
 
 section.new-tweet button:hover {
-    background-color: #232f57;
-    box-shadow: 5px 5px 2px 1px hsl(120, 0%, 50%, 50%);
+    text-shadow: 3px 3px 20px #4056a1, -2px 1px 30px #4056a1;
 }
 
 section.new-tweet button:active {
-    box-shadow: 1px 1px 1px 1px hsl(120, 0%, 50%, 50%);
+    text-shadow: none;
+    background-color: #293765;
 }
+
