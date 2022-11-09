@@ -31,6 +31,15 @@ section.new-tweet output {
     font-family: 'Bungee', cursive;
 }
 
+section.new-tweet textarea:focus {
+    outline: none;
+}
+
 section.new-tweet button:hover {
     background-color: #232f57;
+    box-shadow: 5px 5px 2px 1px hsl(120, 0%, 50%, 50%);
+}
+
+section.new-tweet button:active {
+    box-shadow: 1px 1px 1px 1px hsl(120, 0%, 50%, 50%);
 }
