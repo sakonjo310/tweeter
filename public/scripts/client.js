@@ -41,13 +41,17 @@ const submitTweet = function() {
   $form.on('submit', function(event) {
     event.preventDefault();
     const data = $form.serialize();
+    const tweetLength = $(this).children('textarea#tweet-text').val().length;
+    if (tweetLength > 140) {
+      return alert("Tweet too long!")
+    }
+    if (tweetLength === 0) {
+      return alert("Please write something:D")
+    }
     $.ajax({
       url: '/tweets',
       method: 'POST',
       data: data,
-      success: () => {
-        console.log(data);
-      }
     })
   })
 };
@@ -66,9 +70,5 @@ const loadTweets = function() {
 $(document).ready(function() {
   loadTweets();
   submitTweet();
-  
-  
-
-
 });
 
