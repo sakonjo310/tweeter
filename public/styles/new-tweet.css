@@ -20,8 +20,7 @@ section.new-tweet textarea {
 }
 
 section.new-tweet button {
-    font-family: 'Bungee', cursive;
-    width: 100px;
+    font-family: 'Bungee', cursive;  
     border-style: none;
     background-color: #4056a1;
     color: #fff;
@@ -30,4 +29,8 @@ section.new-tweet button {
 
 section.new-tweet output {
     font-family: 'Bungee', cursive;
+}
+
+section.new-tweet button:hover {
+    background-color: #232f57;
 }
