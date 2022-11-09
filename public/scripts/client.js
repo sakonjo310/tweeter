@@ -4,10 +4,13 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-const renderTweets = function(tweetsArr) {
-  return tweetsArr.forEach(tweet => {
-      $('#tweet-container').prepend(createTweetElement(tweet));
-    });
+const renderTweets = function(tweets) {
+  if (Array.isArray(tweets)) {
+    return tweets.forEach(tweet => {
+        $('#tweet-container').prepend(createTweetElement(tweet));
+      });
+  }
+  return $('#tweet-container').prepend(createTweetElement(tweets));
 };
 
 const escape = function (str) {
@@ -59,7 +62,7 @@ const submitTweet = function() {
       method: 'POST',
       data: data,
     })
-    .then($('textarea').val(''), $('.counter').text(140), loadTweets())
+    .then($('textarea').val(''), $('.counter').text(140), loadNewTweet())
   })
 };
 
@@ -69,6 +72,16 @@ const loadTweets = function() {
     method: 'GET',
     success: (data) => {
       renderTweets(data);
+    }
+  })
+};
+
+const loadNewTweet = function() {
+  $.ajax({
+    url: '/tweets',
+    method: 'GET',
+    success: (data) => {
+      renderTweets(data[data.length - 1]);
     }
   })
 };
