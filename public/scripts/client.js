@@ -10,6 +10,12 @@ const renderTweets = function(tweetsArr) {
     });
 };
 
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 const createTweetElement = function(tweet) {
   const datePassed = timeago.format(tweet.created_at);
   let $tweet = `
@@ -22,7 +28,7 @@ const createTweetElement = function(tweet) {
         <p class="username">${tweet.user.handle}</p>
         </header>
         <div class="tweet-main">
-          <p class="tweet">${tweet.content.text}</p>
+          <p class="tweet">${escape(tweet.content.text)}</p>
         </div>
         <footer>
         <p>${datePassed}</p>
@@ -53,8 +59,7 @@ const submitTweet = function() {
       method: 'POST',
       data: data,
     })
-    .then($('textarea').val(''))
-    .then(loadTweets());
+    .then($('textarea').val(''), $('.counter').text(140), loadTweets())
   })
 };
 
@@ -67,7 +72,6 @@ const loadTweets = function() {
     }
   })
 };
-
 
 $(document).ready(function() {
   loadTweets();
