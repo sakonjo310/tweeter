@@ -53,6 +53,26 @@
     <main class="container">
       <section class="new-tweet">
         <form method="POST" action="/tweets" id="tweet-form">
+          <div class="error-message-one">
+            <p>
+              <i class="fa-solid fa-triangle-exclamation"></i>
+              The entered text is too long! Please make it less than 140 characters.
+              <i class="fa-solid fa-triangle-exclamation"></i>
+            </p>
+          </div>
+          <div class="error-message-two">
+            <p>
+              <i class="fa-solid fa-triangle-exclamation"></i>
+              Your tweet was empty! Please write something.
+              <i class="fa-solid fa-triangle-exclamation"></i>
+            </p>
+          </div>
+          <div class="tweeted">
+            <p>
+              <i class="fa-solid fa-check"></i>
+              You Tweeted!
+            </p>
+          </div>
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
           <button type="submit">tweet</button>

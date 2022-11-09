@@ -45,6 +45,13 @@ const createTweetElement = function(tweet) {
   return $tweet;
 };
 
+const hideMessages = function() {
+  $(".error-message-one").hide();
+  $(".error-message-two").hide();
+  $(".tweeted").hide();
+  return;
+}
+
 const submitTweet = function() {
   const $form = $('#tweet-form');
   $form.on('submit', function(event) {
@@ -52,15 +59,21 @@ const submitTweet = function() {
     const data = $form.serialize();
     const tweetLength = $(this).children('textarea#tweet-text').val().length;
     if (tweetLength > 140) {
-      return alert("Tweet too long!")
+      hideMessages()
+      return $(".error-message-one").slideDown()
     }
     if (tweetLength === 0) {
-      return alert("Please write something:D")
+      hideMessages()
+      return $(".error-message-two").slideDown()
     }
     $.ajax({
       url: '/tweets',
       method: 'POST',
       data: data,
+      success: (data => {
+        hideMessages() 
+        $(".tweeted").slideDown()
+      })
     })
     .then($('textarea').val(''), $('.counter').text(140), loadNewTweet())
   })
@@ -87,6 +100,7 @@ const loadNewTweet = function() {
 };
 
 $(document).ready(function() {
+  hideMessages();
   loadTweets();
   submitTweet();
 });

@@ -5,6 +5,28 @@ section.new-tweet form {
     margin-top: 50px;
 }
 
+div.error-message-one, div.error-message-two {
+    width: 100%;
+    border: 3px solid red;
+    color: red;
+    margin-bottom: 10px;
+}
+
+div.error-message-one p, div.error-message-two p {
+    margin: 10px;
+}
+
+div.tweeted {
+    width: 100%;
+    border: 3px solid rgb(88, 136, 17);
+    color: rgb(88, 136, 17);
+    margin-bottom: 10px;
+}
+
+div.tweeted p {
+    margin: 10px;
+}
+
 label {
     flex: 100%;
     font-weight: bold;
