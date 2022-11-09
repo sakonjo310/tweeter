@@ -6,7 +6,7 @@
 
 const renderTweets = function(tweetsArr) {
   return tweetsArr.forEach(tweet => {
-      $('#tweet-container').append(createTweetElement(tweet));
+      $('#tweet-container').prepend(createTweetElement(tweet));
     });
 };
 
@@ -53,6 +53,8 @@ const submitTweet = function() {
       method: 'POST',
       data: data,
     })
+    .then($('textarea').val(''))
+    .then(loadTweets());
   })
 };
 
