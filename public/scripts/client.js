@@ -118,11 +118,21 @@ const scrollToTop = function() {
 };
 
 const switchButtons = function() {
-
+  $(function scrollTop() {
+    $(window).scroll(function () {
+      if ($(this).scrollTop() > 350) {
+        $('.fixedButton').fadeIn();
+        $('.writeNewTweet p, .writeNewTweet i').fadeOut();
+      } else {
+        $('.fixedButton').fadeOut();
+        $('.writeNewTweet p, .writeNewTweet i').fadeIn();
+      }
+    })
+  })
 }
 
 $(document).ready(function() {
-  // $('.fixedButton').hide();
+  $('.fixedButton').hide();
   $('.new-tweet').hide();
   hideMessages();
   loadTweets();
