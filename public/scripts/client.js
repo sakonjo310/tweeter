@@ -72,10 +72,14 @@ const submitTweet = function() {
       data: data,
       success: (data => {
         hideMessages() 
-        $(".tweeted").slideDown()
+        $(".tweeted").slideDown(function() {
+          setTimeout(() => {$(".tweeted").slideUp()}, 5000)
+        })
+        loadNewTweet()
+        $('textarea').val('')
+        $('.counter').text(140)
       })
     })
-    .then($('textarea').val(''), $('.counter').text(140), loadNewTweet())
   })
 };
 
