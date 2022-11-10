@@ -7,7 +7,6 @@ This repository is the starter code for the project: Students will fork and clon
 ## Screenshots
 
 !["Screenshot of app on a large screen"](https://github.com/sakonjo310/tweeter/blob/master/docs/largeScreen.png?raw=true)
-!["Screenshot of app on tablets"](https://github.com/sakonjo310/tweeter/blob/master/docs/tabletMode.png?raw=true)
 !["Screenshot of error message"](https://github.com/sakonjo310/tweeter/blob/master/docs/errorMessage.png?raw=true)
 !["Screenshot of app on mobile devices"](https://github.com/sakonjo310/tweeter/blob/master/docs/Mobile.png?raw=true)
 
