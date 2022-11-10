@@ -28,6 +28,9 @@ nav .writeNewTweet {
     flex-direction: column;
     transform: scale(1);
     transition: all 0.1s ease-in-out 0.1s;
+    border: none;
+    background: none;
+    color: #fff;
 }
 
 nav .mobile-icon i {
@@ -50,6 +53,7 @@ nav i {
 }
 
 nav .writeNewTweet:hover {
+    cursor: pointer;
     transform: scale(1.1);
     text-shadow: 3px 3px 20px rgb(233, 94, 63), -2px 1px 30px rgb(233, 94, 63);
 }

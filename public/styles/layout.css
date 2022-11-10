@@ -39,12 +39,18 @@ body {
   bottom: 0px;
   right: 0px; 
   padding: 20px;
-  
   color: red;
+  border: none;
+  background: none;
 }
 
 .fixedButton i {
   font-size: 80px;
+}
+
+.fixedButton:hover {
+  cursor: pointer;
+  text-shadow: 3px 3px 20px rgb(233, 94, 63), -2px 1px 30px rgb(233, 94, 63);
 }
 
  article.feed {

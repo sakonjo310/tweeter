@@ -59,6 +59,7 @@ section.new-tweet textarea:focus {
 }
 
 section.new-tweet button:hover {
+    cursor: pointer;
     text-shadow: 3px 3px 20px #4056a1, -2px 1px 30px #4056a1;
 }
 

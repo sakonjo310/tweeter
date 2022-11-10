@@ -106,6 +106,7 @@ const loadNewTweet = function() {
 const showTweetBox = function() {
   $('.writeNewTweet').on('click', function() {
     $('.new-tweet').slideToggle();
+    $('#tweet-text').focus();
   })
 };
 
