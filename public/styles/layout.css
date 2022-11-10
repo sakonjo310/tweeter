@@ -125,3 +125,16 @@ article.feed:hover {
 article.feed footer .action-icons i:hover {
   color: #bf7900;
 }
+
+@media only screen and (min-width: 1024px) {
+  .headerAndMain {
+    display: flex;
+  }
+
+  main.container {
+    width: 55%;
+    margin-right: 20px;
+    margin-top: 150px;
+  }
+}
+

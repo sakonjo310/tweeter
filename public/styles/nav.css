@@ -12,18 +12,31 @@ nav {
 nav span {
     font-family: 'Bungee', cursive;
     padding-left: 1.5em;
-    margin-top: 50px;
     font-size: 40px;
+    align-self: center;
+}
+
+nav span i.fa-dove {
+    display: none;
 }
 
 nav .writeNewTweet {
     text-align: center;
     padding-right: 1.5em;
-    margin-top: 50px;
+    align-self: center;
     display: flex;
     flex-direction: column;
     transform: scale(1);
     transition: all 0.1s ease-in-out 0.1s;
+}
+
+nav .mobile-icon i {
+    font-size: 3rem;
+    color: #fff;
+}
+
+nav .forBiggerScreen {
+    display: none;
 }
 
 nav p {
@@ -31,12 +44,30 @@ nav p {
 }
 
 nav i {
-    color: rgb(125, 190, 28);
+    color: rgb(233, 94, 63);
     --fa-beat-fade-opacity: 0.1;
     --fa-beat-fade-scale: 1.25
 }
 
 nav .writeNewTweet:hover {
     transform: scale(1.1);
-    text-shadow: 3px 3px 20px rgb(125, 190, 28), -2px 1px 30px rgb(125, 190, 28);
+    text-shadow: 3px 3px 20px rgb(233, 94, 63), -2px 1px 30px rgb(233, 94, 63);
 }
+
+@media only screen and (min-width: 768px) {
+    nav .mobile-icon {
+        display: none;
+    }
+    
+    nav .forBiggerScreen {
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav span i.fa-dove {
+        display: contents;
+        color: #fff;
+    }
+}
+
+

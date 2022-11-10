@@ -34,56 +34,62 @@
    </a>
     <!-- Top nav bar (fixed) -->
     <nav>
-      <span>tweeter</span>
+      <span>tweeter<i class="fa-solid fa-dove"></i></span>
       <div class="writeNewTweet">
-        <p><b>Write</b> a new tweet</p>
-        <i class="fa-regular fa-hand-pointer fa-beat-fade"></i>
+        <div class="mobile-icon">
+          <i class="fa-solid fa-dove fa-beat-fade"></i>
+        </div>
+        <div class="forBiggerScreen">
+          <p><b>Write</b> a new tweet</p>
+          <i class="fa-regular fa-hand-pointer fa-beat-fade"></i>
+        </div>
       </div>
     </nav>
 
     <!-- Header here -->
-    <header class="main-header">
-      <div>
-            <img src="/images/profile-hex.png"> 
-      </div>
-      <br>
-      <div class="yourName">
-          <p><b>Satoe</b> Sakonjo</p>
-      </div>
-    </header>
+    <section class="headerAndMain">
+      <header class="main-header">
+        <div>
+              <img src="/images/profile-hex.png"> 
+        </div>
+        <br>
+        <div class="yourName">
+            <p><b>Satoe</b> Sakonjo</p>
+        </div>
+      </header>
+      <!-- Page-specific (main) content here -->
+      <main class="container">
+        <section class="new-tweet">
+          <form method="POST" action="/tweets" id="tweet-form">
+            <div class="error-message-one">
+              <p>
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                The entered text is too long! Please make it less than 140 characters.
+                <i class="fa-solid fa-triangle-exclamation"></i>
+              </p>
+            </div>
+            <div class="error-message-two">
+              <p>
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                Your tweet is empty! Please write something.
+                <i class="fa-solid fa-triangle-exclamation"></i>
+              </p>
+            </div>
+            <div class="tweeted">
+              <p>
+                <i class="fa-solid fa-check"></i>
+                You Tweeted!
+              </p>
+            </div>
+            <label for="tweet-text">What are you humming about?</label>
+            <textarea name="text" id="tweet-text"></textarea>
+            <button type="submit">tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </form>
+        </section>
 
-    <!-- Page-specific (main) content here -->
-    <main class="container">
-      <section class="new-tweet">
-        <form method="POST" action="/tweets" id="tweet-form">
-          <div class="error-message-one">
-            <p>
-              <i class="fa-solid fa-triangle-exclamation"></i>
-              The entered text is too long! Please make it less than 140 characters.
-              <i class="fa-solid fa-triangle-exclamation"></i>
-            </p>
-          </div>
-          <div class="error-message-two">
-            <p>
-              <i class="fa-solid fa-triangle-exclamation"></i>
-              Your tweet was empty! Please write something.
-              <i class="fa-solid fa-triangle-exclamation"></i>
-            </p>
-          </div>
-          <div class="tweeted">
-            <p>
-              <i class="fa-solid fa-check"></i>
-              You Tweeted!
-            </p>
-          </div>
-          <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
-          <button type="submit">tweet</button>
-          <output name="counter" class="counter" for="tweet-text">140</output>
-        </form>
-      </section>
-
-      <section id="tweet-container"></section>
-    </main>
+        <section id="tweet-container"></section>
+      </main>
+    </section>
   </body>
 </html>

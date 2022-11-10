@@ -59,12 +59,12 @@ const submitTweet = function() {
     const data = $form.serialize();
     const tweetLength = $(this).children('textarea#tweet-text').val().length;
     if (tweetLength > 140) {
-      hideMessages()
-      return $(".error-message-one").slideDown()
+      hideMessages();
+      return $(".error-message-one").slideDown();
     }
     if (tweetLength === 0) {
-      hideMessages()
-      return $(".error-message-two").slideDown()
+      hideMessages();
+      return $(".error-message-two").slideDown();
     }
     $.ajax({
       url: '/tweets',
