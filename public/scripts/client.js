@@ -50,7 +50,7 @@ const hideMessages = function() {
   return;
 };
 
-/// Subit Tweet handler
+/// Submit Tweet handler
 const submitTweet = function() {
   const $form = $('#tweet-form');
   $form.on('submit', function(event) {
@@ -92,9 +92,15 @@ const loadTweets = function() {
   $.ajax({
     url: '/tweets',
     method: 'GET',
-    success: (data) => {
-      renderTweets(data);
-    }
+    // success: (data) => {
+    //   renderTweets(data);
+    // }
+  })
+  .then((tweets) => {
+    renderTweets(tweets);
+  })
+  .catch((err) => {
+    console.log(err);
   })
 };
 
@@ -103,9 +109,15 @@ const loadNewTweet = function() {
   $.ajax({
     url: '/tweets',
     method: 'GET',
-    success: (data) => {
-      renderTweets(data[data.length - 1]);
-    }
+    // success: (data) => {
+    //   renderTweets(data[data.length - 1]);
+    // }
+  })
+  .then((tweets) => {
+    renderTweets(tweets[tweets.length - 1]);
+  })
+  .catch((err) => {
+    console.log(err);
   })
 };
 
