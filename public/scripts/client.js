@@ -71,15 +71,15 @@ const submitTweet = function() {
       url: '/tweets',
       method: 'POST',
       data: data,
-      success: (data => {
-        hideMessages();
+    })
+    .then(() => {
+      hideMessages();
         $(".tweeted").slideDown(function() {
           setTimeout(() => {$(".tweeted").slideUp()}, 3000)
         });
         loadNewTweet();
         $('textarea').val('');
         $('.counter').text(140);
-      })
     })
   })
 };
