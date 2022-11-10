@@ -1,70 +1,68 @@
 section.new-tweet form {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 50px;
 }
 
 div.error-message-one, div.error-message-two {
-    width: 100%;
-    border: 3px solid red;
-    color: red;
-    margin-bottom: 10px;
+  width: 100%;
+  border: 3px solid red;
+  color: red;
+  margin-bottom: 10px;
 }
 
 div.error-message-one p, div.error-message-two p {
-    margin: 10px;
+  margin: 10px;
 }
 
 div.tweeted {
-    width: 100%;
-    border: 3px solid rgb(88, 136, 17);
-    color: rgb(88, 136, 17);
-    margin-bottom: 10px;
+  width: 100%;
+  border: 3px solid rgb(88, 136, 17);
+  color: rgb(88, 136, 17);
+  margin-bottom: 10px;
 }
 
 div.tweeted p {
-    margin: 10px;
+  margin: 10px;
 }
 
 label {
-    flex: 100%;
-    font-weight: bold;
+  flex: 100%;
+  font-weight: bold;
 }
 
 section.new-tweet textarea {
-    flex: 100%;
-    border-style: none;
-    border-bottom: 5px solid #545149;
-    background-color: transparent;
-    margin-top: 5px;
-    margin-bottom: 15px;
+  flex: 100%;
+  border-style: none;
+  border-bottom: 5px solid #545149;
+  background-color: transparent;
+  margin-top: 5px;
+  margin-bottom: 15px;
 }
 
 section.new-tweet button {
-    font-family: 'Bungee', cursive;  
-    border-style: none;
-    background-color: #4056a1;
-    color: #fff;
-    padding: 5px 10px;
-    
+  font-family: "Bungee", cursive;
+  border-style: none;
+  background-color: #4056a1;
+  color: #fff;
+  padding: 5px 10px;
 }
 
 section.new-tweet output {
-    font-family: 'Bungee', cursive;
+  font-family: "Bungee", cursive;
 }
 
 section.new-tweet textarea:focus {
-    outline: none;
+  outline: none;
 }
 
 section.new-tweet button:hover {
-    cursor: pointer;
-    text-shadow: 3px 3px 20px #4056a1, -2px 1px 30px #4056a1;
+  cursor: pointer;
+  text-shadow: 3px 3px 20px #4056a1, -2px 1px 30px #4056a1;
 }
 
 section.new-tweet button:active {
-    text-shadow: none;
-    background-color: #293765;
+  text-shadow: none;
+  background-color: #293765;
 }
-
