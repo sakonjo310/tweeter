@@ -25,6 +25,8 @@ header.main-header .yourName p {
   header.main-header {
     height: 40vw;
     width: 45%;
-    margin: 180px 20px;
+    margin: 200px 5vh;
+    max-height: 600px;
+    max-width: 650px;
   }
 }
