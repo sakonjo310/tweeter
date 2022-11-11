@@ -92,9 +92,6 @@ const loadTweets = function() {
   $.ajax({
     url: '/tweets',
     method: 'GET',
-    // success: (data) => {
-    //   renderTweets(data);
-    // }
   })
   .then((tweets) => {
     renderTweets(tweets);
@@ -109,9 +106,6 @@ const loadNewTweet = function() {
   $.ajax({
     url: '/tweets',
     method: 'GET',
-    // success: (data) => {
-    //   renderTweets(data[data.length - 1]);
-    // }
   })
   .then((tweets) => {
     renderTweets(tweets[tweets.length - 1]);
