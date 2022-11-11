@@ -31,7 +31,7 @@ This repository is the starter code for the project: Students will fork and clon
 
 - On mobile devices(screen width smaller than 768px): "Write a new tweet" button changes to a bird icon.
 - On tablets (screen width smaller than 1024px): "Write a new tweet" text appears and the bird icon is added at the end of the logo.
-- On bigger screens (screen width bigger than 1024px): Profile and the feed displayed side by side. Height of the profile square changes accorging to the width.
+- On bigger screens (screen width bigger than 1024px): Profile and the feed displayed side by side. Height of the profile square changes accorging to the width of the screen. Position of the profile is fixed on the left side.
 
 ## Dependencies
 
