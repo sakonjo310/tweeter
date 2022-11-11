@@ -23,7 +23,6 @@ header.main-header .yourName p {
 
 @media only screen and (min-width: 1024px) {
   header.main-header {
-    position: fixed;
     height: 40vw;
     width: 45%;
     margin: 200px 5vh;
