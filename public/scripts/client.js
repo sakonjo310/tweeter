@@ -1,11 +1,9 @@
-/// Render Tweet to the feed
+/// Render Tweets to the feed
 const renderTweets = function(tweets) {
-  if (Array.isArray(tweets)) {
     return tweets.forEach(tweet => {
-      $('#tweet-container').prepend(createTweetElement(tweet));
+      const $container = $('#tweet-container');
+      $container.prepend(createTweetElement(tweet));
     })
-  }
-  return $('#tweet-container').prepend(createTweetElement(tweets));
 };
 
 /// Escaping XSS
@@ -60,11 +58,15 @@ const submitTweet = function() {
     const tweetLength = $(this).children('textarea#tweet-text').val().length;
     if (tweetLength > 140) {
       hideMessages();
-      return $(".error-message-one").slideDown();
+      return $(".error-message-one").slideDown(function() {
+        setTimeout(() => {$(".error-message-one").slideUp()}, 3000)
+      });
     }
     if (tweetLength === 0) {
       hideMessages();
-      return $(".error-message-two").slideDown();
+      return $(".error-message-two").slideDown(function() {
+        setTimeout(() => {$(".error-message-two").slideUp()}, 3000);
+      });
     }
     // AJAX request
     $.ajax({
@@ -77,7 +79,7 @@ const submitTweet = function() {
       $(".tweeted").slideDown(function() {
         setTimeout(() => {$(".tweeted").slideUp()}, 3000)
       });
-      loadNewTweet();
+      loadTweets();
       $('textarea').val('');
       $('.counter').text(140);
     })
@@ -94,6 +96,7 @@ const loadTweets = function() {
     method: 'GET',
   })
   .then((tweets) => {
+    $('#tweet-container').empty();
     renderTweets(tweets);
   })
   .catch((err) => {
@@ -101,19 +104,6 @@ const loadTweets = function() {
   })
 };
 
-/// Load the just submitted tweet (used in submit handler)
-const loadNewTweet = function() {
-  $.ajax({
-    url: '/tweets',
-    method: 'GET',
-  })
-  .then((tweets) => {
-    renderTweets(tweets[tweets.length - 1]);
-  })
-  .catch((err) => {
-    console.log(err);
-  })
-};
 
 /// Show/hide the text area
 const showTweetBox = function() {
